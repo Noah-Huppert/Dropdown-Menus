@@ -1,0 +1,145 @@
+/*
+font-family: 'Lobster', cursive;
+*/
+html, body{
+	padding: 0;
+	margin: 0;
+}
+
+
+
+/* Menu Wrapper */
+.mobile-menu{
+	width: 200px;
+	height: auto;
+	position: absolute;
+	top: 50px;
+	bottom: 0px;
+	line-height: 50px;
+	margin-left: -100%;
+	background: #3498db;
+	border-top: 3px dashed #e74c3c;
+	overflow: hidden;
+	-moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+}
+.mobile-menu[active="true"]{
+	margin-left: 0%;
+}
+
+
+/* Open Menu Button */
+.mobile-menu-button{
+	width: 100%;
+	height: 50px;
+	display: block;
+	line-height: 50px;
+	background: #3498db;
+}
+.mobile-menu-button button{
+	margin-left: 20px;
+	padding: 5px;
+	background: #e74c3c;
+	border: none;
+	border-radius: 3px;
+	color: #FFFFFF;
+	font-size: 16px;
+	font-family: 'Lobster', cursive;
+}
+
+
+/* Regular Item */
+.mobile-menu a{
+	display: block;
+	padding-left: 20px;
+	text-align: left;
+	color: white;
+	font-size: 16px;
+	font-family: 'Lobster', cursive;
+	text-decoration: none;
+}
+
+
+
+/* Dropdown Item */
+.mobile-menu div{
+	width: 100%;
+	max-height: 50px;
+	margin-left: 20px;
+	display: block;
+	overflow: hidden;
+	cursor: pointer;
+	-moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+}
+/* Dropdown Item Title */
+.mobile-menu div span{
+	display: block;
+	text-align: left;
+	color: white;
+	font-size: 16px;
+	font-family: 'Lobster', cursive;
+}
+.mobile-menu div span:after{
+	content: '>';
+	font-weight: bold;
+	display: inline-block;
+	margin-left: 10px;
+}
+/* Dropdown item, item */
+.mobile-menu div a{
+	display: block;
+}
+.mobile-menu div[active="true"], .mobile-menu div[active="true"] .content{
+	max-height: 1000px;
+}
+
+@media (min-width: 800px){
+	.mobile-menu-button{
+		display: none;
+	}
+
+	.mobile-menu{
+		width: 100%;
+		//height: 50px;
+		margin-left: 0px;
+		top: auto;
+		bottom: auto;
+		border-top: none;
+		overflow: visible;
+	}
+
+	.mobile-menu a{
+		display: inline-block;
+	}
+
+	.mobile-menu div{
+		width: auto;
+		max-height: 50px;
+		display: inline-block;
+		vertical-align: top;
+		background: #3498db;
+	}
+
+	.mobile-menu div .content{
+		display: none;
+	}
+
+	.mobile-menu div[active="true"]
+	, .mobile-menu div:hover
+	, .mobile-menu div[active="true"] .content
+	, .mobile-menu div:hover .content{
+		max-height: 1000px;
+	}
+
+	.mobile-menu div[active="true"] .content
+	, .mobile-menu div:hover .content{
+		display: block;
+	}
+}
